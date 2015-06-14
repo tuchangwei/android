@@ -30,6 +30,8 @@ public class BaseActivity extends RoboActionBarActivity {
     /**
      * Finder bound to this activity's view
      */
+    //这个类来自于wishlist库，这个库包含了一些有用的工具类.
+    // ViewFind 用来找到和拧一个view的子view
     protected ViewFinder finder;
 
     @Override
