@@ -31,6 +31,8 @@ import roboguice.util.RoboContext;
  * <p>
  * Based on <a href="https://github.com/mccrajs">@mccrajs's</a> implementation <a href="https://github.com/metova/roboguice-appcompat/blob/master/src/com/metova/roboguice/appcompat/RoboActionBarActivity.java">here</a>.
  */
+
+//位于roboactivities文件夹的类来自于第三方库roboguice，这个库是用来注入view，资源和其他对象。
 public class RoboActionBarActivity extends ActionBarActivity implements RoboContext {
 
     protected EventManager eventManager;
