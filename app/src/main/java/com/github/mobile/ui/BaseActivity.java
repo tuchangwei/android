@@ -46,6 +46,7 @@ public class BaseActivity extends RoboActionBarActivity {
      * @return serializable
      */
     @SuppressWarnings("unchecked")
+    //这里用的范型，返回的V必须是实现Serializable的对象
     protected <V extends Serializable> V getSerializableExtra(final String name) {
         return (V) getIntent().getSerializableExtra(name);
     }
