@@ -15,11 +15,15 @@
   limitations under the License.
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-
+<!--自定义主题，继承于NoActionBar-->
     <style name="Theme.GitHub" parent="@style/Theme.AppCompat.NoActionBar">
 
+        <!-- Main theme colors -->
+        <!--   your app branding color for the app bar -->
         <item name="colorPrimary">@color/primary</item>
+        <!--   darker variant for the status bar and contextual app bars -->
         <item name="colorPrimaryDark">@color/primary_dark</item>
+        <!--   theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">@color/accent</item>
 
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
