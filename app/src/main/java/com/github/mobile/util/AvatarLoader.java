@@ -32,14 +32,14 @@ import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
+import org.eclipse.egit.github.core.CommitUser;
+import org.eclipse.egit.github.core.Contributor;
+import org.eclipse.egit.github.core.User;
+
 import java.io.File;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
-
-import org.eclipse.egit.github.core.CommitUser;
-import org.eclipse.egit.github.core.Contributor;
-import org.eclipse.egit.github.core.User;
 
 import roboguice.util.RoboAsyncTask;
 
@@ -70,6 +70,7 @@ public class AvatarLoader {
      *
      * @param context
      */
+    //当此构造方法被标记为@Inject时，初始化此对象时将会调用此构造方法。
     @Inject
     public AvatarLoader(final Context context) {
         this.context = context;

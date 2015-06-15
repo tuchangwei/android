@@ -1,6 +1,5 @@
 package com.github.mobile.ui;
 
-import static com.github.mobile.ui.NavigationDrawerObject.TYPE_SEPERATOR;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
@@ -29,10 +28,12 @@ import com.github.mobile.util.AvatarLoader;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
+import org.eclipse.egit.github.core.User;
+
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.egit.github.core.User;
+import static com.github.mobile.ui.NavigationDrawerObject.TYPE_SEPERATOR;
 
 public class MainActivity extends BaseActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks,
     LoaderManager.LoaderCallbacks<List<User>> {
@@ -41,9 +42,11 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
+    //初始化AccountDataManager类
     @Inject
     private AccountDataManager accountDataManager;
 
+    //初始化Provider类,这个类中存储的是UserComparator对象。
     @Inject
     private Provider<UserComparator> userComparatorProvider;
 
@@ -60,8 +63,13 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //设置toolbar为actionbar
         setSupportActionBar((android.support.v7.widget.Toolbar) findViewById(R.id.toolbar));
 
+        // Prepare the loader.  Either re-connect with an existing one,
+        // or start a new one.
+        //loaders make it easy to asynchronously load data in an activity or fragment
         getSupportLoaderManager().initLoader(0, null, this);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
